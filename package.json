@@ -2,6 +2,25 @@
   "name": "i18next-resources-to-backend",
   "version": "1.0.0",
   "description": "This package helps to transform resources to an i18next backend",
+  "keywords": [
+    "i18next",
+    "i18next-backend",
+    "i18next-chained-backend"
+  ],
+  "homepage": "https://github.com/i18next/i18next-resources-to-backend",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:i18next/i18next-resources-to-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/i18next/i18next-resources-to-backend/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/i18next/i18next-resources-to-backend/main/licence"
+    }
+  ],
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
