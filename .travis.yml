@@ -5,7 +5,7 @@ node_js:
 - '16'
 branches:
   only:
-  - master
+  - main
 notifications:
   email:
   - adriano@raiano.ch
