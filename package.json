@@ -1,6 +1,6 @@
 {
   "name": "i18next-resources-to-backend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "This package helps to transform resources to an i18next backend",
   "type": "module",
   "main": "./dist/cjs/index.js",
