@@ -1,6 +1,6 @@
 {
   "name": "i18next-resources-to-backend",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "This package helps to transform resources to an i18next backend",
   "type": "module",
   "main": "./dist/cjs/index.js",
@@ -31,7 +31,9 @@
     "test:deno": "deno test test/deno/*.ts --reload --no-check",
     "test:typescript": "tsd",
     "test": "npm run lint && mocha --colors --reporter spec --recursive test/*.js",
-    "test:all": "npm run test && npm run test:typescript && npm run test:deno"
+    "test:all": "npm run test && npm run test:typescript && npm run test:deno",
+    "preversion": "npm run test && npm run build && git push",
+    "postversion": "git push && git push --tags"
   },
   "license": "MIT",
   "dependencies": {
