@@ -15,12 +15,6 @@
   "bugs": {
     "url": "https://github.com/i18next/i18next-resources-to-backend/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://raw.github.com/i18next/i18next-resources-to-backend/main/licence"
-    }
-  ],
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
