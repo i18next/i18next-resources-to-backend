@@ -79,7 +79,7 @@ i18next.use(ChainedBackend).init({
         HttpBackend, // if a namespace can't be loaded via normal http-backend loadPath, then the inMemoryLocalBackend will try to return the correct resources
         resourcesToBackend((language, namespace, callback) => {
             import(`./locales/${language}/${namespace}.json`)
-                .then((resources) => {
+                .then(({ default: resources }) => { // with dynamic import, you have to use the "default" key of the module ( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#importing_defaults )
                     callback(null, resources)
                 })
                 .catch((error) => {
