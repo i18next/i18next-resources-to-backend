@@ -1,6 +1,6 @@
 {
   "name": "i18next-resources-to-backend",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "This package helps to transform resources to an i18next backend",
   "keywords": [
     "i18next",
