@@ -6,7 +6,7 @@ import pkg from './package.json'
 
 const getBabelOptions = ({ useESModules, plugins = [] }) => ({
   exclude: /node_modules/,
-  runtimeHelpers: true,
+  babelHelpers: 'runtime',
   plugins: [['@babel/transform-runtime', { useESModules }]].concat(plugins),
   comments: false
 })
