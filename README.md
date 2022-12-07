@@ -77,15 +77,17 @@ i18next.use(ChainedBackend).init({
     backend: {
       backends: [
         HttpBackend, // if a namespace can't be loaded via normal http-backend loadPath, then the inMemoryLocalBackend will try to return the correct resources
-        resourcesToBackend((language, namespace, callback) => {
-            import(`./locales/${language}/${namespace}.json`)
-                .then(({ default: resources }) => { // with dynamic import, you have to use the "default" key of the module ( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#importing_defaults )
-                    callback(null, resources)
-                })
-                .catch((error) => {
-                    callback(error, null)
-                })
-        })
+        // with dynamic import, you have to use the "default" key of the module ( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#importing_defaults )
+        resourcesToBackend((language, namespace) => import(`./locales/${language}/${namespace}.json`))
+        // resourcesToBackend((language, namespace, callback) => {
+        //     import(`./locales/${language}/${namespace}.json`)
+        //         .then(({ default: resources }) => {
+        //             callback(null, resources)
+        //         })
+        //         .catch((error) => {
+        //             callback(error, null)
+        //         })
+        // })
       ],
       backendOptions: [{
         loadPath: 'http://localhost:8080/locales/{{lng}}/{{ns}}.json'

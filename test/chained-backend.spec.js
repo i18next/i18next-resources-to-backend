@@ -29,6 +29,18 @@ describe('basic chained-backend', () => {
         }
       }
     }
+    const resC = {
+      en: {
+        translationFlbTwo: {
+          welcome: 'hello world from local fallback 2'
+        }
+      },
+      de: {
+        translationFlbTwo: {
+          welcome: 'hallo welt vom lokalen fallback 2'
+        }
+      }
+    }
 
     const i18n = i18next.createInstance()
     await i18n.use(ChainedBackend).init({
@@ -36,12 +48,13 @@ describe('basic chained-backend', () => {
       lng: 'en',
       fallbackLng: 'en',
       preload: ['en', 'de'],
-      ns: ['translation', 'translationFlb'],
+      ns: ['translation', 'translationFlb', 'translationFlbTwo'],
       defaultNS: 'translation',
       backend: {
         backends: [
           resourcesToBackend(resA),
-          resourcesToBackend((lng, ns, clb) => clb(null, resB && resB[lng] && resB[lng][ns]))
+          resourcesToBackend((lng, ns, clb) => clb(null, resB && resB[lng] && resB[lng][ns])),
+          resourcesToBackend(async (lng, ns) => resC && resC[lng] && resC[lng][ns])
         ]
       }
     })
@@ -49,5 +62,7 @@ describe('basic chained-backend', () => {
     should(i18n.t('welcome', { lng: 'de' })).eql('hallo welt')
     should(i18n.t('welcome', { ns: 'translationFlb' })).eql('hello world from local fallback')
     should(i18n.t('welcome', { lng: 'de', ns: 'translationFlb' })).eql('hallo welt vom lokalen fallback')
+    should(i18n.t('welcome', { ns: 'translationFlbTwo' })).eql('hello world from local fallback 2')
+    should(i18n.t('welcome', { lng: 'de', ns: 'translationFlbTwo' })).eql('hallo welt vom lokalen fallback 2')
   })
 })
