@@ -9,7 +9,7 @@ const resourcesToBackend = (res) => ({
           const r = res(language, namespace)
           if (r && typeof r.then === 'function') {
             // promise
-            r.then((data) => callback(null, data)).catch(callback)
+            r.then((data) => callback(null, (data && data.__esModule && data.default) || data)).catch(callback)
           } else {
             // sync
             callback(null, r)
