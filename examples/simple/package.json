@@ -2,6 +2,6 @@
   "type": "module",
   "dependencies": {
     "i18next": "22.4.10",
-    "i18next-resources-to-backend": "1.1.1"
+    "i18next-resources-to-backend": "1.1.2"
   }
 }

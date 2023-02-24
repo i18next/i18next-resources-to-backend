@@ -1,6 +1,6 @@
 import i18next from 'i18next'
-// import resourcesToBackend from 'i18next-resources-to-backend'
-import resourcesToBackend from '../../dist/esm/index.js'
+import resourcesToBackend from 'i18next-resources-to-backend'
+// import resourcesToBackend from '../../dist/esm/index.js'
 
 i18next
   .use(resourcesToBackend((language, namespace) => import(`./locales/${language}/${namespace}.json`, { assert: { type: 'json' } })))
