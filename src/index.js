@@ -3,7 +3,7 @@ const resourcesToBackend = (res) => ({
   init (services, backendOptions, i18nextOptions) { /* use services and options */ },
   read (language, namespace, callback) {
     if (typeof res === 'function') { // in case someone wants to customize the loading...
-      if (res.length === 2) {
+      if (res.length < 3) {
         // no callback
         try {
           const r = res(language, namespace)
