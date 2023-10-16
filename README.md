@@ -2,7 +2,6 @@
 
 [![Actions](https://github.com/i18next/i18next-resources-to-backend/workflows/node/badge.svg)](https://github.com/i18next/i18next-resources-to-backend/actions?query=workflow%3Anode)
 [![Actions deno](https://github.com/i18next/i18next-resources-to-backend/workflows/deno/badge.svg)](https://github.com/i18next/i18next-resources-to-backend/actions?query=workflow%3Adeno)
-[![Travis](https://img.shields.io/travis/i18next/i18next-resources-to-backend/master.svg?style=flat-square)](https://travis-ci.org/i18next/i18next-resources-to-backend)
 [![npm version](https://img.shields.io/npm/v/i18next-resources-to-backend.svg?style=flat-square)](https://www.npmjs.com/package/i18next-resources-to-backend)
 
 This package helps to transform resources to an i18next backend. To be used in Node.js, in the browser and for Deno.
