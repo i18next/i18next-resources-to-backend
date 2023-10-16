@@ -1,6 +1,6 @@
 import { babel } from '@rollup/plugin-babel'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 import { readFileSync } from 'fs'
 const pkg = JSON.parse(readFileSync(new URL('package.json', import.meta.url)))
