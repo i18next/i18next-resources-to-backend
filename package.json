@@ -19,13 +19,13 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "browser": "./dist/umd/i18nextResourcesToBackend.js",
-  "types": "./index.d.ts",
+  "types": "./index.d.mts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "types": {
         "require": "./dist/cjs/index.d.ts",
-        "import": "./dist/esm/index.d.ts"
+        "import": "./dist/esm/index.d.mts"
       },
       "module": "./dist/esm/index.js",
       "import": "./dist/esm/index.js",
@@ -37,7 +37,7 @@
       "default": "./dist/cjs/index.js"
     },
     "./esm": {
-      "types": "./dist/esm/index.d.ts",
+      "types": "./dist/esm/index.d.mts",
       "default": "./dist/esm/index.js"
     },
     "./src": {
@@ -46,9 +46,9 @@
   },
   "scripts": {
     "lint:javascript": "eslint .",
-    "lint:typescript": "eslint -c .ts.eslintrc *.d.ts test/types/**/*.test-d.ts",
+    "lint:typescript": "eslint -c .ts.eslintrc *.d.ts *.d.mts test/types/**/*.test-d.ts",
     "lint": "npm run lint:javascript && npm run lint:typescript",
-    "build": "rm -rf dist && rollup -c && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && cp index.d.ts dist/cjs/index.d.ts && cp index.d.ts dist/esm/index.d.ts",
+    "build": "rm -rf dist && rollup -c && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && cp index.d.ts dist/cjs/index.d.ts && cp index.d.ts dist/esm/index.d.ts && cp index.d.mts dist/esm/index.d.mts",
     "test:deno": "deno test test/deno/*.ts --reload --no-check",
     "test:typescript": "tsd",
     "test": "npm run lint && mocha --colors --reporter spec --recursive test/*.js",
@@ -61,30 +61,30 @@
     "@babel/runtime": "^7.23.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.2",
-    "@babel/plugin-transform-runtime": "^7.23.2",
-    "@babel/preset-env": "^7.23.2",
+    "@babel/core": "^7.23.3",
+    "@babel/plugin-transform-runtime": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/mocha": "^10.0.2",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
-    "@typescript-eslint/parser": "^6.7.5",
+    "@types/mocha": "^10.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
     "babel-plugin-add-module-exports": "^1.0.4",
-    "eslint": "^8.51.0",
+    "eslint": "^8.53.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.3.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-require-path-exists": "^1.1.9",
     "eslint-plugin-standard": "^5.0.0",
-    "i18next": "^23.5.1",
-    "i18next-chained-backend": "^4.5.0",
+    "i18next": "^23.7.1",
+    "i18next-chained-backend": "^4.6.2",
     "mocha": "^10.2.0",
-    "rollup": "^4.1.4",
+    "rollup": "^4.3.0",
     "should": "^13.2.3",
-    "sinon": "^16.1.0",
+    "sinon": "^17.0.1",
     "tsd": "^0.29.0",
     "typescript": "^5.2.2"
   },
