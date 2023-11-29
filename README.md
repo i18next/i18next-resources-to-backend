@@ -15,6 +15,23 @@ Source can be loaded via [npm](https://www.npmjs.com/package/i18next-resources-t
 $ npm install i18next-resources-to-backend
 ```
 
+## simple example - dynamic imports (lazy load in memory translations)
+
+i18next-resources-to-backend helps to transform resources to an i18next backend. This means, you can also lazy load translations, for example when using webpack:
+
+```js
+import i18next from 'i18next';
+import resourcesToBackend from 'i18next-resources-to-backend';
+
+i18next
+  .use(resourcesToBackend((language, namespace) => import(`./locales/${language}/${namespace}.json`)))
+  .init({ /* other options */ })
+```
+
+## used as fallback in combination with another i18next backend
+
+i.e. [Browser fallback with local / bundled translations](https://www.i18next.com/how-to/backend-fallback#browser-fallback-with-local-bundled-translations)
+
 Wiring up:
 
 ```js
