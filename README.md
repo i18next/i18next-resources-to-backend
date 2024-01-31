@@ -17,7 +17,11 @@ $ npm install i18next-resources-to-backend
 
 ## simple example - dynamic imports (lazy load in memory translations)
 
-i18next-resources-to-backend helps to transform resources to an i18next backend. This means, you can also lazy load translations, for example when using webpack:
+i18next-resources-to-backend helps to transform resources to an i18next backend. This means you can lazy load translations.
+
+The dynamic import must be passed a string. Webpack will fail to load the resource if you pass a variable to `import()`.
+
+For example, when using webpack:
 
 ```js
 import i18next from 'i18next';
@@ -25,6 +29,7 @@ import resourcesToBackend from 'i18next-resources-to-backend';
 
 i18next
   .use(resourcesToBackend((language, namespace) => import(`./locales/${language}/${namespace}.json`)))
+  .on('failedLoading', (lng, ns, msg) => console.error(msg);
   .init({ /* other options */ })
 ```
 
