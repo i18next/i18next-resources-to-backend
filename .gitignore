@@ -7,3 +7,10 @@ dist
 # !dist/
 # dist/*
 # !dist/deno/
+
+# Secrets & credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
