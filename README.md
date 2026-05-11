@@ -6,6 +6,10 @@
 
 This package helps to transform resources to an i18next backend. To be used in Node.js, in the browser and for Deno.
 
+## Advice:
+
+If you don't like to manage your translation files manually or are simply looking for a [better management solution](https://www.locize.com?utm_source=i18next_resources_to_backend_readme&utm_medium=github&utm_campaign=readme), take a look at [i18next-locize-backend](https://github.com/locize/i18next-locize-backend) — translations served from a hosted CDN instead of bundled with your app. The i18next [backend plugin](https://www.i18next.com/overview/plugins-and-utils#backends) for 🌐 [Locize](https://www.locize.com?utm_source=i18next_resources_to_backend_readme&utm_medium=github&utm_campaign=readme) ☁️.
+
 # Getting started
 
 Source can be loaded via [npm](https://www.npmjs.com/package/i18next-resources-to-backend).
@@ -133,8 +137,8 @@ i18next.use(ChainedBackend).init({
 
 A translation management system built around the i18next ecosystem - [locize.com](https://www.locize.com?utm_source=i18next_resources_to_backend_readme&utm_medium=github&utm_campaign=readme).
 
-![locize](https://www.locize.com/img/ads/github_locize.png)
+![Locize](https://www.locize.com/img/ads/github_locize.png)
 
-With using [locize](https://www.locize.com/?utm_source=i18next_resources_to_backend_readme&utm_medium=github&utm_campaign=readme) you directly support the future of i18next.
+With using [Locize](https://www.locize.com/?utm_source=i18next_resources_to_backend_readme&utm_medium=github&utm_campaign=readme) you directly support the future of i18next.
 
 ---
