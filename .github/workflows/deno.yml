@@ -3,7 +3,7 @@ name: deno
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   test:
@@ -11,14 +11,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        deno: [ '1.x' ]
+        deno: [ '2.x' ]
         # os: [ubuntu-latest, windows-latest, macOS-latest]
         os: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       - name: Setup Deno
-        uses: denolib/setup-deno@master
+        uses: denoland/setup-deno@v2
         with:
           deno-version: ${{ matrix.deno }}
       - run: deno --version
-      - run: deno test test/deno/*.ts --reload --no-check
+      - run: deno test --allow-net --allow-env test/deno/*.js
