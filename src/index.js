@@ -13,7 +13,7 @@ const UNSAFE_KEYS = ['__proto__', 'constructor', 'prototype']
 // `a/b`), never in a language code.
 const isSafeIdentifier = (v, allowSlash) => {
   if (typeof v !== 'string') return false
-  if (v.length === 0 || v.length > 128) return false
+  if (v.length > 128) return false // empty is fine: it cannot traverse or hit Object.prototype
   if (UNSAFE_KEYS.indexOf(v) > -1) return false
   if (v.indexOf('..') > -1) return false
   if (v.indexOf('\\') > -1) return false
