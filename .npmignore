@@ -9,3 +9,14 @@ README.md
 test
 scripts
 examples
+.babelrc
+.github
+.ts.eslintrc
+rollup.config.js
+tsconfig.json
+# npm ignores .gitignore once .npmignore exists, so local/secret files are mirrored here
+.claude
+.idea
+.env*
+*.pem
+*.key
