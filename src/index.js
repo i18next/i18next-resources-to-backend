@@ -25,6 +25,8 @@ const isSafeIdentifier = (v, allowSlash) => {
 
 const resourcesToBackend = (res) => ({
   type: 'backend',
+  // i18next >= 26.7 calls read with a callback instead of guessing that from the number of parameters
+  callbackApi: true,
   init (services, backendOptions, i18nextOptions) { /* use services and options */ },
   read (language, namespace, callback) {
     if (!isSafeIdentifier(language, false) || !isSafeIdentifier(namespace, true)) {
