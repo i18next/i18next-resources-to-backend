@@ -1,3 +1,7 @@
+### 1.2.4
+
+- fix: i18next 26.7.0 deprecates guessing the calling convention of a backend from the number of parameters of its methods; the backend now declares it with `callbackApi`, so i18next calls `read` and `create` with a callback (and passes `create` its options), and debug mode no longer logs the deprecation notice. Older i18next versions ignore it.
+
 ### 1.2.3
 
 - fix: allow empty `language`/`namespace` strings again (e.g. `defaultNS: ''`), rejected since 1.2.2 [#16](https://github.com/i18next/i18next-resources-to-backend/issues/16). An empty string cannot traverse the filesystem or reach `Object.prototype`, so it was never part of the attack surface.
