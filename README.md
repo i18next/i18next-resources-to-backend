@@ -139,8 +139,6 @@ i18next.use(ChainedBackend).init({
 
 A translation management system built around the i18next ecosystem - [locize.com](https://www.locize.com?utm_source=i18next_resources_to_backend_readme&utm_medium=github&utm_campaign=readme).
 
-![Locize](https://www.locize.com/img/ads/github_locize.png)
-
 With using [Locize](https://www.locize.com/?utm_source=i18next_resources_to_backend_readme&utm_medium=github&utm_campaign=readme) you directly support the future of i18next.
 
 ---
