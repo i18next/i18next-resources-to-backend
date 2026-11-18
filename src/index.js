@@ -35,17 +35,19 @@ const resourcesToBackend = (res) => ({
     if (typeof res === 'function') { // in case someone wants to customize the loading...
       if (res.length < 3) {
         // no callback
+        let r
         try {
-          const r = res(language, namespace)
-          if (r && typeof r.then === 'function') {
-            // promise
-            r.then((data) => callback(null, (data && data.default) || data)).catch(callback)
-          } else {
-            // sync
-            callback(null, r)
-          }
+          r = res(language, namespace)
         } catch (err) {
-          callback(err)
+          return callback(err)
+        }
+        // outside the try and not with .catch(): an error thrown by the callback must not call it a second time
+        if (r && typeof r.then === 'function') {
+          // promise
+          r.then((data) => callback(null, (data && data.default) || data), callback)
+        } else {
+          // sync
+          callback(null, r)
         }
         return
       }
