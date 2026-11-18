@@ -1,3 +1,7 @@
+### 1.3.0
+
+- fix: a loader without a callback calls the i18next callback only once. When that callback threw (for example from a `loaded` listener or the callback of `init` or `loadNamespaces`), it was called a second time with that error, so i18next marked the namespace that had just loaded as failed. The error now reaches your app: thrown from the call that started the load for a loader that returns a value, and an unhandled rejection for a loader that returns a promise, which ends a Node.js process unless you handle `unhandledRejection`. Thanks [@SudeepGowda55](https://github.com/SudeepGowda55) ([#17](https://github.com/i18next/i18next-resources-to-backend/pull/17))
+
 ### 1.2.4
 
 - fix: i18next 26.7.0 deprecates guessing the calling convention of a backend from the number of parameters of its methods; the backend now declares it with `callbackApi`, so i18next calls `read` and `create` with a callback (and passes `create` its options), and debug mode no longer logs the deprecation notice. Older i18next versions ignore it.
